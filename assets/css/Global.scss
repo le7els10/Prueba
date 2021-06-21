@@ -1,0 +1,261 @@
+//constantes
+$main-ligth: #fc758c;
+$main: #db4961;
+$max-window-w: 1300px;
+$spacing: 2px;
+$transition: all 0.2s ease-in;
+
+* {
+  font-family: "Questrial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  .container {
+    max-width: $max-window-w;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1rem;
+    position: relative;
+
+    .logo-container {
+      img {
+        width: 150px;
+      }
+    }
+
+    .menu-sm {
+      display: none;
+    }
+  }
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: $transition;
+  background-color: #fff;
+  .link-item {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.8rem;
+    transition: $transition;
+    cursor: pointer;
+    letter-spacing: $spacing;
+    margin: 0 1px;
+
+    &:hover,
+    &.active {
+      background-color: $main;
+      color: white;
+    }
+
+    &.search {
+      color: $main;
+      font-size: 1.2rem;
+      &:hover,
+      &.active {
+        background-color: transparent;
+        color: $main-ligth;
+      }
+    }
+  }
+
+  &.d-none {
+    display: none;
+  }
+}
+
+.first-view {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-ligth;
+  max-width: $max-window-w;
+  margin: auto;
+
+  .container {
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      color: #fff;
+      letter-spacing: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    p {
+      margin: 1rem auto 0;
+      letter-spacing: $spacing;
+      color: #fff;
+      max-width: 500px;
+      text-align: center;
+      line-height: 1.2rem;
+    }
+
+    .btn {
+      margin: 2rem auto 0;
+
+      &:hover {
+        background-color: $main-ligth;
+      }
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  background-color: #fff;
+  padding: 0.8rem 2rem;
+  color: $main;
+  font-size: 0.8rem;
+  transition: $transition;
+  border: 1px solid transparent;
+
+  &.icon {
+    padding: 0.5rem 1rem;
+  }
+
+  &:hover {
+    border: 1px solid #fff;
+    background-color: $main;
+    color: #fff;
+  }
+
+  &.reverse {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: $main;
+
+    &:hover {
+      border: 1px solid $main;
+      background-color: #fff;
+      color: $main;
+    }
+  }
+}
+
+.grid-container {
+  max-width: $max-window-w;
+  margin: auto;
+
+  .grid-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+    .btn-1 {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      div {
+        background-color: $main;
+        width: 6px;
+        height: 6px;
+        margin: 1px;
+      }
+    }
+
+    .btn-2 {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 20px;
+      margin: 0 5px;
+      cursor: pointer;
+
+      div {
+        background-color: $main;
+        width: 12px;
+        height: 5px;
+        margin: 1px;
+      }
+    }
+  }
+
+  .grid-images {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: masonry;
+    grid-gap: 1em;
+
+    .item {
+      background-color: #f6f6f6;
+      padding: 10px;
+      height: fit-content;
+      margin-bottom: 1em;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &.columns-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.columns-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.show-container {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  margin: 4.5rem;
+  .rights-container {
+    p {
+      color: #dce3e7;
+      text-align: center;
+
+      span {
+        color: $main;
+      }
+    }
+  }
+  .icons-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    color: #dce3e7;
+    justify-content: center;
+
+    i {
+      margin: 0 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  nav {
+    .container {
+      .menu-sm {
+        display: block;
+      }
+
+      .links-container {
+        width: 100%;
+        margin-top: 1em;
+        position: absolute;
+        transform: translate(-1rem, 2rem);
+
+        .link-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
